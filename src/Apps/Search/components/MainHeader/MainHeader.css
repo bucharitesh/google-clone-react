@@ -1,0 +1,26 @@
+.MainHeader__container {
+  display: flex;
+  padding: 20px 30px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  max-height: 50px;
+}
+
+.MainHeader__container a {
+  margin: 10px;
+  text-decoration: inherit;
+  color: rgba(0,  0,  0,  0.87);
+  font-size: 15px;
+}
+
+.MainHeader__container a:hover{
+  text-decoration: underline;
+}
+
+.MainHeader__headerRight {
+  display: flex;
+  align-items: center;
+  min-width: 13vw;
+  justify-content: center;
+}

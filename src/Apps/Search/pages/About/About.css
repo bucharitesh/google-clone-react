@@ -1,0 +1,38 @@
+.about__body {
+  flex: 1;
+  display: flex;
+  margin-top: 10%;
+  flex-direction: column;
+}
+
+.about__body > img {
+  object-fit: contain;
+  height: 100px;
+}
+
+.aboutPage__bodytext {
+  color: gray;
+  flex: 1;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 30px;
+  margin-top: 40px;
+  align-content: center;
+}
+
+.about__body a {
+  color: black;
+  text-decoration: none;
+}
+
+.about__body a:hover {
+  color: random();
+}
+
+.about_Socialicons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
