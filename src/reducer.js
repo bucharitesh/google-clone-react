@@ -19,7 +19,7 @@ export const initialState = {
 export const actionTypes = {
   SET_SEARCH_TERM: "SET_SEARCH_TERM",
   SET_USER: "SET_USER",
-}
+};
 
 const reducer = (state, action) => {
   console.log(action);

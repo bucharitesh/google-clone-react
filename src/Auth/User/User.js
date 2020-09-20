@@ -1,15 +1,14 @@
-import React from 'react';
-import UserDropdown from '../../Components/RightHeader/Dropdown/UserDropdown/UserDropdown';
+import React from "react";
+import UserDropdown from "../../Components/RightHeader/Dropdown/UserDropdown/UserDropdown";
 
-import { Button, makeStyles } from '@material-ui/core';
-import { auth, provider } from '../../firebase/firebase';
+import { Button, makeStyles } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
-import { useStateValue } from '../../StateProvider';
-import { actionTypes } from '../../reducer';
+import { useStateValue } from "../../StateProvider";
 
 const useStyles = makeStyles((theme) => ({
   loginButton: {
-    marginLeft: 10
+    marginLeft: 10,
   },
 }));
 
@@ -21,29 +20,38 @@ function User() {
 
   const classes = useStyles();
 
-  const signIn = () => {
-    auth.signInWithPopup(provider)
-    .then(result => {
-
-
-      dispatch({
-        type: actionTypes.SET_USER,
-        user: result.user
-      })
-
-    })
-    .catch((error) => alert(error.message));
-  }
-
   return (
     <div>
-      {!user ?
-        <Button size="small" variant="contained" color="primary" className={classes.loginButton}disableElevation onClick={signIn} >login</Button>
-      :
-        <UserDropdown/>
-      }
+      {!user ? (
+        <>
+          <Link to="/login">
+            <Button
+              size="small"
+              variant="contained"
+              color="primary"
+              className={classes.loginButton}
+              disableElevation
+            >
+              login
+            </Button>
+          </Link>
+          <Link to="/register">
+            <Button
+              size="small"
+              variant="contained"
+              color="primary"
+              className={classes.loginButton}
+              disableElevation
+            >
+              Register
+            </Button>
+          </Link>
+        </>
+      ) : (
+        <UserDropdown />
+      )}
     </div>
-  )
+  );
 }
 
-export default User
+export default User;

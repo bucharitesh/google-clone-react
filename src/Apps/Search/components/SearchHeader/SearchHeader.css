@@ -37,7 +37,7 @@
   margin-top: 10px;
 }
 
-.searchPage__headerBody > .search > .search__input {
+.searchPage__headerBody>.search>.search__input {
   margin-top: 0;
   width: unset;
   margin: unset;
@@ -50,10 +50,8 @@
   align-items: center;
   min-width: 13vw;
   justify-content: center;
-  margin: -10px -20px;
 }
 
 .seachPage____headerLeft {
   display: flex;
 }
-

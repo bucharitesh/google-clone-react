@@ -1,22 +1,22 @@
-import React from 'react';
-import './Home.css';
+import React from "react";
+import "./Home.css";
 
-import SearchBar from '../../../../Components/SearchBar/SearchBar';
-import MainHeader from '../../components/MainHeader/MainHeader';
+import SearchBar from "../../components/SearchBar/SearchBar";
 
 function Home() {
   return (
     <div className="home">
-      <MainHeader/>
       <div className="home__body">
-        <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt=""/>
+        <img
+          src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+          alt=""
+        />
         <div className="home__inputContainer">
-          <SearchBar/>
+          <SearchBar />
         </div>
       </div>
-
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

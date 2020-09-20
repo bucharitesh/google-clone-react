@@ -1,0 +1,25 @@
+.Image__resultsContainer {
+  /* max-width: 50%; */
+  margin-top: 15px;
+  margin-left: 8%;
+  margin-bottom: 100px;
+  --auto-grid-min-size: 16rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+  grid-gap: 1rem;
+}
+
+@media (min-width: 576px) {
+  .searchPage__results {
+    max-width: 80%;
+  }
+}
+
+
+.Images__Container {}
+
+.Images__results {
+  height: 200px;
+  width: 200px;
+  border-radius: 5px;
+}

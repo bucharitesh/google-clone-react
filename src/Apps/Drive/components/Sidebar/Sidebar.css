@@ -1,0 +1,112 @@
+.Sidebar__container {
+  flex: 0.15;
+  height: 600px;
+  padding-top: 8px;
+  /* border-right: 1px solid #dadce0; */
+}
+
+/* Add Button */
+.uploadButton {
+  display: flex;
+  border: none;
+  margin-left: 20px;
+  margin-top: 15px;
+  box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
+  align-items: center;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 24px;
+  color: #3c4043;
+  display: inline-flex;
+  padding: 15px;
+  font-weight: 500;
+  font-size: 14px;
+  height: 52px;
+  letter-spacing: .15px;
+}
+
+.uploadButton > p {
+  margin: 6px 18px 6px 12px;
+  font-weight: 700;
+}
+
+.uploadButton:hover, .uploadButton:focus-within {
+  outline: none;
+  box-shadow: 0 1px 10px 0 rgba(32,33,36,0.28);
+  border-color: rgba(223,225,229,0);
+  cursor: pointer;
+}
+
+/* Menu */
+
+.Sidebar__menu {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.Sidebar__menuItem {
+  display: flex;
+  border: none;
+  background-color: #e8f0fe;
+  border: solid transparent;
+  border-width: 1px 1px 1px 0;
+  padding-bottom: 0;
+  padding-right: 0;
+  padding-top: 0;
+  border-radius: 0px 50px 50px 0px;
+  padding: 10px;
+}
+
+.Sidebar__menuImage {
+  margin-left: 10px;
+  color: #1967d2;
+}
+
+.Sidebar__menuItem > p {
+  margin-left: 30px;
+  font-weight: 600;
+  color: #1967d2;
+}
+
+/* Sidebar Divider */
+
+.Sidebar__divider {
+  margin-top: 30px;
+  border-bottom: 1px solid #dadce0;
+}
+
+/* Sidebar__storage */
+
+.Sidebar__Storage {
+  margin-top: 20px;
+}
+
+.Sidebar_StorageUsed {
+  margin-top: 15px;
+  margin-left: 75px;
+  color: #5f6368;
+  font-size: 14px;
+}
+
+.Sidebar_Storagebar {
+  margin-top: 10px;
+}
+
+.Sidebar_StorageBuyButton {
+  padding: 0px;
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 20px;
+  border: none;
+  padding: 5px;
+  border-radius: 4px;
+  color: #1a73e8;
+  cursor: pointer;
+  background-color: white;
+}
+
+.Sidebar_StorageBuyButton:hover {
+  background-color: #e8f0fe;
+}

@@ -1,0 +1,33 @@
+.Body__container {
+  flex: 0.85;
+  height: 95%;
+  margin-left: 10px;
+  height: 600px;
+}
+
+.Body__header {
+  padding: 8px;
+  border-bottom: 1px solid #dadce0;
+}
+
+.Header__button {
+  color: gray;
+  background-color: white;
+  border: none;
+  font-size: large;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding-right: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #202124;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+}
+
+.Header__button:focus-within, .Header__button:hover {
+  background-color: #f5f5f5;
+  background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+  border-radius: 10px;
+}

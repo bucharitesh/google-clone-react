@@ -1,48 +1,70 @@
-import React from 'react';
-import './SearchPageOptions.css';
-import { Link } from 'react-router-dom';
+import React from "react";
+import "./SearchPageOptions.css";
+import { NavLink } from "react-router-dom";
 
-import SearchIcon from '@material-ui/icons/Search';
-import RoomOutlinedIcon from '@material-ui/icons/RoomOutlined';
-import DescriptionOutlinedIcon from '@material-ui/icons/DescriptionOutlined';
-import ImageOutlinedIcon from '@material-ui/icons/ImageOutlined';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import SearchIcon from "@material-ui/icons/Search";
+import RoomOutlinedIcon from "@material-ui/icons/RoomOutlined";
+import DescriptionOutlinedIcon from "@material-ui/icons/DescriptionOutlined";
+import ImageOutlinedIcon from "@material-ui/icons/ImageOutlined";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
+import PlayCircleFilledOutlinedIcon from "@material-ui/icons/PlayCircleFilledOutlined";
 
 function SearchPageOptions() {
   return (
     <div className="SearchPage__options">
       <div className="searchPage__optionLeft">
-        <div className="searchPage__option active">
-          <SearchIcon fontSize="small" />
-          <Link to="/search">All</Link>
-        </div>
-        <div className="searchPage__option">
-          <ImageOutlinedIcon fontSize="small" />
-          <Link to="/images">Images</Link>
-        </div>
-        <div className="searchPage__option">
-          <RoomOutlinedIcon fontSize="small" />
-          <Link to="/maps">Maps</Link>
-        </div>
-        <div className="searchPage__option">
-          <DescriptionOutlinedIcon fontSize="small" />
-          <Link to="/news">News</Link>
-        </div>
+        <NavLink to="/search/q/all">
+          <div className="searchPage__option">
+            <SearchIcon fontSize="small" />
+            All
+          </div>
+        </NavLink>
+
+        <NavLink to="/search/q/images">
+          <div className="searchPage__option">
+            <ImageOutlinedIcon fontSize="small" />
+            Images
+          </div>
+        </NavLink>
+
+        <NavLink to="/search/q/maps">
+          <div className="searchPage__option">
+            <RoomOutlinedIcon fontSize="small" />
+            Maps
+          </div>
+        </NavLink>
+
+        <NavLink to="/search/q/news">
+          <div className="searchPage__option">
+            <DescriptionOutlinedIcon fontSize="small" />
+            News
+          </div>
+        </NavLink>
+
+        <NavLink to="/search/q/videos">
+          <div className="searchPage__option">
+            <PlayCircleFilledOutlinedIcon fontSize="small" />
+            Videos
+          </div>
+        </NavLink>
+
         <div className="searchPage__option">
           <MoreVertIcon fontSize="small" />
-          <Link to="/more">More</Link>
+          More
         </div>
       </div>
+
       <div className="searchPage__optionRight">
-        <div className="searchPage__option phone__options">
-            <Link to="/settings">Settings</Link>
-          </div>
-          <div className="searchPage__option phone__options">
-            <Link to="/tools">Tools</Link>
-        </div>
+        <NavLink to="/search/settings">
+          <div className="searchPage__option">Settings</div>
+        </NavLink>
+
+        <NavLink to="/search/q/tools">
+          <div className="searchPage__option">Tools</div>
+        </NavLink>
       </div>
     </div>
-  )
+  );
 }
 
-export default SearchPageOptions
+export default SearchPageOptions;

@@ -1,5 +1,5 @@
-import useGoogleSearch from './useGoogleSearch';
+import useGoogleSearch from "./useGoogleSearch";
+import useNewsSearch from "./useNewsSearch";
+import useYoutubeSearch from "./useYoutubeSearch";
 
-export {
-  useGoogleSearch
-};
+export { useGoogleSearch, useNewsSearch, useYoutubeSearch };
