@@ -1,11 +1,20 @@
-import React from 'react'
-import './UserDropdown.css';
-import { Link } from 'react-router-dom';
+import React from "react";
+import "./UserDropdown.css";
+import { Link } from "react-router-dom";
 
-import { Avatar, IconButton, Button, ClickAwayListener, Divider, Grow, makeStyles, Popper } from '@material-ui/core';
-import { useStateValue } from '../../../../StateProvider';
-import firebase from 'firebase';
-import { actionTypes } from '../../../../reducer';
+import {
+  Avatar,
+  IconButton,
+  Button,
+  ClickAwayListener,
+  Divider,
+  Grow,
+  makeStyles,
+  Popper,
+} from "@material-ui/core";
+import { useStateValue } from "../../../../StateProvider";
+import firebase from "firebase";
+import { actionTypes } from "../../../../reducer";
 
 const useStyles = makeStyles({
   root: {
@@ -13,7 +22,7 @@ const useStyles = makeStyles({
     width: 400,
   },
   avatar: {
-    borderRadius: '50%',
+    borderRadius: "50%",
   },
   Userimage: {
     border: null,
@@ -32,12 +41,11 @@ const useStyles = makeStyles({
   },
   UserDivider: {
     border: 10,
-  }
+  },
 });
 
-
 function UserDropdown(props) {
-  const [{user}, dispatch] = useStateValue();
+  const [{ user }, dispatch] = useStateValue();
 
   const [open, setOpen] = React.useState(false);
   const classes = useStyles();
@@ -55,14 +63,20 @@ function UserDropdown(props) {
   };
 
   const Signout = (event) => {
-    firebase.auth().signOut().then(function() {
-      dispatch({
-        type: actionTypes.SET_USER,
-        user: null
-      })
-    }, function(error) {
-      console.error('Sign Out Error', error);
-    });
+    firebase
+      .auth()
+      .signOut()
+      .then(
+        function () {
+          dispatch({
+            type: actionTypes.SET_USER,
+            user: null,
+          });
+        },
+        function (error) {
+          console.error("Sign Out Error", error);
+        }
+      );
   };
 
   // return focus to the button when we transitioned from !open -> open
@@ -76,50 +90,69 @@ function UserDropdown(props) {
   }, [open]);
 
   return (
-      <div>
-        <IconButton
-          ref={anchorRef}
-          aria-controls={open ? 'menu-list-grow' : undefined}
-          aria-haspopup="true"
-          onClick={handleToggle}
-        >
-          <Avatar src={user.photoURL} className={classes.avatar} />
-        </IconButton>
-        <Popper className={classes.root} open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal placement="bottom-end">
-          {({ TransitionProps, placement }) => (
-            <Grow
-              {...TransitionProps}
-              style={{ transformOrigin: placement === 'bottom' ? 'right bottom' : 'left bottom' }}
-            >
-              {/* <Paper elevation={3} > */}
-                <ClickAwayListener onClickAway={handleClose}>
-                    <div className="UserDropdown__container">
-                        <div className="UserDropdown__header">
-                          <Avatar className={classes.Userimage} src={user.photoURL}/>
-                          <p className="UserDropdown__name">
-                            {user.displayName}
-                          </p>
-                          <p className="UserDropdown__email">{user.email}</p>
-                          {/* <Button variant="outlined" className={classes.UserAccountButton}>Manage Your Account</Button> */}
-                        </div>
-                      <Divider className={classes.UserDivider}/>
-                          <p className="UserDropdown__email">More email adding option coming soon</p>
-                      <Divider />
-                          <Button className={classes.UserSignoutButton} size="small" variant="outlined" onClick={Signout}>Sign Out</Button>
-                      <Divider className={classes.UserDivider}/>
-                          <div className="UserDropdown__policy">
-                            <Link to="/privacypolicy" >Privacy Policy</Link>
-                            &#8226;
-                            <Link to="/termsofservice" >Terms of service</Link>
-                          </div>
-                    </div>
-                </ClickAwayListener>
-              {/* </Paper> */}
-            </Grow>
-          )}
-        </Popper>
-      </div>
-  )
+    <div>
+      <IconButton
+        ref={anchorRef}
+        aria-controls={open ? "menu-list-grow" : undefined}
+        aria-haspopup="true"
+        onClick={handleToggle}
+      >
+        {/* <Avatar src={user.photoURL} className={classes.avatar} /> */}
+        <Avatar className={classes.avatar} />
+      </IconButton>
+      <Popper
+        className={classes.root}
+        open={open}
+        anchorEl={anchorRef.current}
+        role={undefined}
+        transition
+        disablePortal
+        placement="bottom-end"
+      >
+        {({ TransitionProps, placement }) => (
+          <Grow
+            {...TransitionProps}
+            style={{
+              transformOrigin:
+                placement === "bottom" ? "right bottom" : "left bottom",
+            }}
+          >
+            {/* <Paper elevation={3} > */}
+            <ClickAwayListener onClickAway={handleClose}>
+              <div className="UserDropdown__container">
+                <div className="UserDropdown__header">
+                  <Avatar className={classes.Userimage} src={user.photoURL} />
+                  <p className="UserDropdown__name">{user.displayName}</p>
+                  <p className="UserDropdown__email">{user.email}</p>
+                  {/* <Button variant="outlined" className={classes.UserAccountButton}>Manage Your Account</Button> */}
+                </div>
+                <Divider className={classes.UserDivider} />
+                <p className="UserDropdown__email">
+                  More email adding option coming soon
+                </p>
+                <Divider />
+                <Button
+                  className={classes.UserSignoutButton}
+                  size="small"
+                  variant="outlined"
+                  onClick={Signout}
+                >
+                  Sign Out
+                </Button>
+                <Divider className={classes.UserDivider} />
+                <div className="UserDropdown__policy">
+                  <Link to="/privacypolicy">Privacy Policy</Link>
+                  &#8226;
+                  <Link to="/termsofservice">Terms of service</Link>
+                </div>
+              </div>
+            </ClickAwayListener>
+            {/* </Paper> */}
+          </Grow>
+        )}
+      </Popper>
+    </div>
+  );
 }
 
 export default UserDropdown;

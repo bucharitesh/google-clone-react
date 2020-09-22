@@ -1,4 +1,5 @@
 .RightHeader__container {
   display: flex;
   align-items: baseline;
+  margin-right: 20px;
 }

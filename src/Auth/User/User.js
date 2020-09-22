@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
 
 function User() {
   // eslint-disable-next-line
-  const [state, dispatch] = useStateValue();
+  // const [state, dispatch] = useStateValue();
 
   const [{ user }] = useStateValue();
 
@@ -24,7 +24,7 @@ function User() {
     <div>
       {!user ? (
         <>
-          <Link to="/login">
+          <Link exact to="/u/login">
             <Button
               size="small"
               variant="contained"
@@ -35,7 +35,7 @@ function User() {
               login
             </Button>
           </Link>
-          <Link to="/register">
+          <Link exact to="/u/register">
             <Button
               size="small"
               variant="contained"
