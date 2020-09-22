@@ -1,0 +1,73 @@
+.Search__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
+  background: #fff;
+  border-radius: 8px;
+  box-sizing: border-box;
+  width: 392px;
+  height: 48px;
+  border-bottom: 1px solid transparent;
+  padding: 20px 30px 20px 0px;
+  transition-property: background, box-shadow;
+  transition-duration: 0.3s;
+}
+
+.mapsSearch__input {
+  flex: 1;
+  padding: 10px 20px;
+  font-size: medium;
+  border: none;
+  background-color: transparent;
+  font-weight: 550;
+  font-size: 15px;
+  width: 260px;
+}
+
+.mapsSearch__input:focus {
+  outline-width: 0px;
+}
+
+.mapsSearch__optionsPopover {
+  margin-top: 0.8rem;
+  background-color: white;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
+  background: #fff;
+  border-radius: 8px;
+  width: 392px;
+  border-bottom: 1px solid transparent;
+  padding: 10px;
+  min-width: 370px;
+  margin-left: -40px;
+  font-size: 13px;
+}
+
+.mapsSearch__optionsUL {
+  list-style-type: none;
+  margin-left: -30px;
+  margin-top: 10px;
+}
+
+.mapsSearch__optionsLI {
+  margin: 8px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.mapsSearch__optionsLI:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.mapsSearch {
+  display: flex;
+  align-items: center;
+}
+
+.link__listItems {
+  font-weight: 700;
+  text-decoration: none;
+  color: unset;
+}

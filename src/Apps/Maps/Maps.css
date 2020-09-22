@@ -1,0 +1,48 @@
+/* .mapSearch {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 400px;
+  z-index: 10;
+
+}
+
+.mapSearch input {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+.MapsHeader__hamburger {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 10;
+  background-color: white;
+  border: 1px solid rgba(21, 21, 32, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.mapLocate {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  background: none;
+  border: none;
+  z-index: 10;
+}
+
+.mapLocate img {
+  width: 30px;
+  cursor: pointer;
+} */
+
+.SearchBar {
+  position: absolute;
+  z-index: 10;
+  top: 1.5rem;
+  left: 1.5rem;
+}

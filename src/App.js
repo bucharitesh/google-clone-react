@@ -15,6 +15,7 @@ import reducer, { initialState } from "./reducer";
 const Home = lazy(() => import("./Apps/Home"));
 const Search = lazy(() => import("./Apps/Search"));
 const Drive = lazy(() => import("./Apps/Drive"));
+const Maps = lazy(() => import("./Apps/Maps"));
 const NotFound = lazy(() => import("./Pages/404"));
 const Login = lazy(() => import("./Auth/User/Login/Login"));
 const Register = lazy(() => import("./Auth/User/Register/Register"));
@@ -48,6 +49,7 @@ function AppRoutes() {
       <Suspense fallback={<Fragment />}>
         <Switch location={location}>
           <Route exact path="/" component={Home} />
+          <Route exact path="/maps" component={Maps} />
           <Route path={["/app", "/apps", "/home"]}>
             <Redirect to="/" />
           </Route>

@@ -9,6 +9,7 @@ import BuchariteshIcon from "../../Assets/Images/BuchariteshIcon";
 import { ReactComponent as TodoIcon } from "../../Assets/Images/TodoIcon.svg";
 import { ReactComponent as GoogleIcon } from "../../Assets/Images/GoogleIcon.svg";
 import { ReactComponent as GoogleDriveIcon } from "../../Assets/Images/GoogleDriveIcon.svg";
+import { ReactComponent as GoogleMapsIcon } from "../../Assets/Images/GoogleMapsIcon2.svg";
 
 function Home() {
   return (
@@ -41,6 +42,12 @@ function Home() {
             <div className="Home__apps">
               <GoogleDriveIcon height="40" width="40" />
               <p>Google Drive</p>
+            </div>
+          </Link>
+          <Link to="/maps">
+            <div className="Home__apps">
+              <GoogleMapsIcon height="40" width="40" />
+              <p>Google Maps</p>
             </div>
           </Link>
           <a href="https://bucharitesh.in">

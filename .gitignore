@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 /.firebase
+/src/keys.js
 
 # testing
 /coverage
