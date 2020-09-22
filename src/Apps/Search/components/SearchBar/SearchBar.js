@@ -14,7 +14,6 @@ import VoiceTranscript from "./VoiceTranscript/VoiceTranscript";
 
 function SearchBar({ hideButtons = false }) {
   const [{ term }, dispatch] = useStateValue();
-
   const [input, setInput] = useState(term);
   const history = useHistory();
 

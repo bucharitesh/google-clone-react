@@ -1,6 +1,6 @@
 .searchPage__option {
   display: flex;
-  align-items: center;
+
   color: #5f6368;
   padding: 16px 12px 12px 10px;
   font-size: 13px;
@@ -20,6 +20,7 @@
   display: flex;
   align-items: center;
   color: grey;
+  margin-left: 150px;
 }
 
 .SearchPage__options :hover {
@@ -34,7 +35,7 @@
   color: #5f6368;
 }
 
-@media (min-width: 476px) {
+/* @media (min-width: 476px) {
   .SearchPage__options {
     margin-left: 0%;
   }
@@ -42,9 +43,9 @@
 
 @media (min-width: 992px) {
   .SearchPage__options {
-    margin-left: 23%;
+    margin-left: 200px;
   }
-}
+} */
 
 @media (max-width: 650px) {
   .phone__options {

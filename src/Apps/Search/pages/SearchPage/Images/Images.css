@@ -15,11 +15,9 @@
   }
 }
 
-
-.Images__Container {}
-
 .Images__results {
   height: 200px;
   width: 200px;
   border-radius: 5px;
+  border: 1px solid rgba(22, 23, 16, 0.2);
 }

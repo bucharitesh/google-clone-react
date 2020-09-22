@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy } from "react";
 // import "./SearchPage.css";
 import { useStateValue } from "../../../StateProvider";
 import { Switch, Route } from "react-router-dom";
@@ -9,6 +9,8 @@ import News from "../pages/SearchPage/News/News";
 import Videos from "../pages/SearchPage/Videos/Videos";
 
 import SearchHeader from "../components/SearchHeader/SearchHeader";
+
+const Maps = lazy(() => import("../../Maps"));
 
 function SearchPage() {
   const [{ term }] = useStateValue();
@@ -25,6 +27,9 @@ function SearchPage() {
           </Route>
           <Route exact={true} path="/search/q/news">
             <News />
+          </Route>
+          <Route exact={true} path="/maps">
+            <Maps />
           </Route>
           <Route exact={true} path="/search/q/videos">
             <Videos />

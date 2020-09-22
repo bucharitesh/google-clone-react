@@ -37,20 +37,4 @@ function Videos() {
   );
 }
 
-{
-  /* <a className="VideoPage__resultLink" href="https://bucharitesh.in">
-            <img
-              className="videoPage__thumbnail"
-              src={item.snippet.thumbnails.default.url}
-              alt=""
-            />
-
-            {item.snippet.title}
-          </a>
-          <a className="" href="href=https://bucharitesh.in">
-            <h2>{item.snippet.channelTitle}</h2>
-          </a>
-          <p className="VideoPage__resultSnippet">{item.snippet.description}</p> */
-}
-
 export default Videos;

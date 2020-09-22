@@ -6,7 +6,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import RoomOutlinedIcon from "@material-ui/icons/RoomOutlined";
 import DescriptionOutlinedIcon from "@material-ui/icons/DescriptionOutlined";
 import ImageOutlinedIcon from "@material-ui/icons/ImageOutlined";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
+// import MoreVertIcon from "@material-ui/icons/MoreVert";
 import PlayCircleFilledOutlinedIcon from "@material-ui/icons/PlayCircleFilledOutlined";
 
 function SearchPageOptions() {
@@ -48,20 +48,10 @@ function SearchPageOptions() {
           </div>
         </NavLink>
 
-        <div className="searchPage__option">
+        {/* <div className="searchPage__option">
           <MoreVertIcon fontSize="small" />
           More
-        </div>
-      </div>
-
-      <div className="searchPage__optionRight">
-        <NavLink to="/search/settings">
-          <div className="searchPage__option">Settings</div>
-        </NavLink>
-
-        <NavLink to="/search/q/tools">
-          <div className="searchPage__option">Tools</div>
-        </NavLink>
+        </div> */}
       </div>
     </div>
   );
