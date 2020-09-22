@@ -6,7 +6,7 @@ import Drawer from "@material-ui/core/Drawer";
 import Divider from "@material-ui/core/Divider";
 
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import { ReactComponent as MapsIcon } from "../../../../../Assets/Images/GoogleMapsIcon.svg";
+import { ReactComponent as MapsIcon } from "../../../../Assets/Images/GoogleMapsIcon.svg";
 
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";

@@ -49,14 +49,14 @@ function AppRoutes() {
       <Suspense fallback={<Fragment />}>
         <Switch location={location}>
           <Route exact path="/" component={Home} />
-          <Route exact path="/maps" component={Maps} />
           <Route path={["/app", "/apps", "/home"]}>
             <Redirect to="/" />
           </Route>
           <Route path="/search" component={Search} />
+          <Route exact path="/maps" component={Maps} />
           <Route path="/drive" component={Drive} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Register} />
           <Route component={NotFound} />
         </Switch>
       </Suspense>

@@ -1,8 +1,8 @@
-import React, { useCallback, useRef } from "react";
+import React from "react";
 import "./SearchBar.css";
 
 import SearchInput from "./SearchInput/SearchInput";
-import SideDrawer from "./SideDrawer/SideDrawer";
+import SideDrawer from "../SideDrawer/SideDrawer";
 
 function Search({ panTo }) {
   return (

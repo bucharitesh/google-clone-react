@@ -4,6 +4,7 @@ import { GCP_API_KEY } from "../../keys";
 import "./Maps.css";
 
 import SearchBar from "./Components/SearchBar/SearchBar";
+import mapStyles from "./mapStyles";
 
 const libraries = ["places"];
 const mapContainerStyle = {
@@ -11,6 +12,7 @@ const mapContainerStyle = {
   width: "100vw",
 };
 const options = {
+  styles: mapStyles,
   disableDefaultUI: true,
   zoomControl: true,
 };
@@ -19,13 +21,15 @@ const center = {
   lng: -79.3832,
 };
 
-function Maps() {
+function Maps({ match }) {
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: GCP_API_KEY,
     libraries,
   });
 
   const [markers, setMarkers] = useState([]);
+
+  // eslint-disable-next-line
   const [selected, setSelected] = useState(null);
 
   const onMapClick = React.useCallback((e) => {
@@ -43,7 +47,7 @@ function Maps() {
 
   const panTo = useCallback(({ lat, lng }) => {
     mapRef.current.panTo({ lat, lng });
-    mapRef.current.setZoom(14);
+    mapRef.current.setZoom(15);
   }, []);
 
   const onMapLoad = useCallback((map) => {

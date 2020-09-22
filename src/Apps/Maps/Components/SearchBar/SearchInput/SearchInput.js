@@ -13,7 +13,7 @@ import {
   ComboboxOption,
 } from "@reach/combobox";
 
-import SearchIcon from "@material-ui/icons/Search";
+import { ReactComponent as SearchIcon } from "../../../../../Assets/Images/SearchIcon.svg";
 import ClearIcon from "@material-ui/icons/Clear";
 import { IconButton } from "@material-ui/core";
 

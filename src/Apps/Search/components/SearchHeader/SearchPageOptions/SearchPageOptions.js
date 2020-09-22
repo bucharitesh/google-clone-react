@@ -6,7 +6,6 @@ import SearchIcon from "@material-ui/icons/Search";
 import RoomOutlinedIcon from "@material-ui/icons/RoomOutlined";
 import DescriptionOutlinedIcon from "@material-ui/icons/DescriptionOutlined";
 import ImageOutlinedIcon from "@material-ui/icons/ImageOutlined";
-// import MoreVertIcon from "@material-ui/icons/MoreVert";
 import PlayCircleFilledOutlinedIcon from "@material-ui/icons/PlayCircleFilledOutlined";
 
 function SearchPageOptions() {
@@ -27,7 +26,7 @@ function SearchPageOptions() {
           </div>
         </NavLink>
 
-        <NavLink to="/search/q/maps">
+        <NavLink exact to="/maps">
           <div className="searchPage__option">
             <RoomOutlinedIcon fontSize="small" />
             Maps
