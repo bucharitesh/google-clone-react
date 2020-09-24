@@ -1,10 +1,11 @@
 import React, { useState, useCallback, useRef } from "react";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
-import { GCP_API_KEY } from "../../keys";
 import "./Maps.css";
 
 import SearchBar from "./Components/SearchBar/SearchBar";
 import mapStyles from "./mapStyles";
+
+const API_KEY = process.env.REACT_APP_GCP_API_KEY;
 
 const libraries = ["places"];
 const mapContainerStyle = {
@@ -23,7 +24,7 @@ const center = {
 
 function Maps() {
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: GCP_API_KEY,
+    googleMapsApiKey: API_KEY,
     libraries,
   });
 

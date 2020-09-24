@@ -1,19 +1,19 @@
-import firebase from 'firebase';
+import firebase from "firebase";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCd1v0MFkGotzJmV5ro5KNDu7MQ1VIE9-k",
-  authDomain: "react-clone-18cae.firebaseapp.com",
-  databaseURL: "https://react-clone-18cae.firebaseio.com",
-  projectId: "react-clone-18cae",
-  storageBucket: "react-clone-18cae.appspot.com",
-  messagingSenderId: "1098703830221",
-  appId: "1:1098703830221:web:279406479d2fb2bcb6bd84",
-  measurementId: "G-C9T96BYB1P"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APPID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const db = firebaseApp.firestore();
-const auth  = firebase.auth();
+const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
 
 export { auth, provider };
