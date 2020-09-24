@@ -42,7 +42,7 @@ function SearchBar({ hideButtons = false }) {
     <form className="search">
       <div className="search__input">
         <VoiceIcon className="search__inputIcon" />
-        <input onChange={(e) => setInput(e.target.value)} />
+        <input value={input} onChange={(e) => setInput(e.target.value)} />
         {/* <Divider orientation="vertical" className="verticalDivider" /> */}
         <IconButton onClick={handleClickOpen}>
           <SearchIcon />

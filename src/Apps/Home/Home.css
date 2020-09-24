@@ -1,6 +1,7 @@
 .Home__container {
   width: 100%;
 }
+
 .Home__header {
   display: flex;
   justify-content: flex-end;
@@ -42,6 +43,7 @@
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -85,15 +87,15 @@ div.Home__apps:hover {
   }
 }
 
-.circles {
+/* .circles {
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
   padding: 0;
-}
+} */
 
 .circles li {
   position: absolute;
@@ -102,7 +104,7 @@ div.Home__apps:hover {
   width: 20px;
   height: 20px;
   background: rgba(255, 255, 255, 0.2);
-  animation: animate 40s linear infinite;
+  animation: animate 80s linear infinite;
   bottom: -150px;
 }
 
@@ -258,6 +260,7 @@ div.Home__apps:hover {
     stroke-dashoffset: 0;
   }
 }
+
 #cur1 {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
@@ -298,22 +301,27 @@ div.Home__apps:hover {
   -webkit-animation: welcome 0.75s ease-in forwards 0.5s;
   animation: welcome 0.75s ease-in forwards 0.5s;
 }
+
 .go #el {
   -webkit-animation: welcome 0.75s linear forwards 1.2s;
   animation: welcome 0.75s linear forwards 1.2s;
 }
+
 .go #lc {
   -webkit-animation: welcome 0.75s linear forwards 1.6s;
   animation: welcome 0.75s linear forwards 1.6s;
 }
+
 .go #co {
   -webkit-animation: welcome 0.4s linear forwards 1.7s;
   animation: welcome 0.4s linear forwards 1.7s;
 }
+
 .go #om {
   -webkit-animation: welcome 0.5s linear forwards 2s;
   animation: welcome 0.5s linear forwards 2s;
 }
+
 .go #me {
   -webkit-animation: welcome 0.75s linear forwards 2.5s;
   animation: welcome 0.75s linear forwards 2.5s;

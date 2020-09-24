@@ -21,7 +21,7 @@ const center = {
   lng: -79.3832,
 };
 
-function Maps({ match }) {
+function Maps() {
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: GCP_API_KEY,
     libraries,
@@ -32,7 +32,7 @@ function Maps({ match }) {
   // eslint-disable-next-line
   const [selected, setSelected] = useState(null);
 
-  const onMapClick = React.useCallback((e) => {
+  const onMapClick = useCallback((e) => {
     setMarkers((current) => [
       ...current,
       {
@@ -48,6 +48,13 @@ function Maps({ match }) {
   const panTo = useCallback(({ lat, lng }) => {
     mapRef.current.panTo({ lat, lng });
     mapRef.current.setZoom(15);
+    console.log(lat, lng);
+    setMarkers(() => [
+      {
+        lat: lat,
+        lng: lng,
+      },
+    ]);
   }, []);
 
   const onMapLoad = useCallback((map) => {
