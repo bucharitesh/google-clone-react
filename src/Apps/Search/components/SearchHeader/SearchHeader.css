@@ -39,9 +39,9 @@
 
 .searchPage__headerBody>.search>.search__input {
   margin-top: 0;
-  width: unset;
+  /* width: unset; */
   margin: unset;
-  max-width: unset;
+  min-width: 100px;
   height: 22px;
 }
 

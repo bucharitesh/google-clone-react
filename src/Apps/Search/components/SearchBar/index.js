@@ -5,8 +5,7 @@ import "./SearchBar.css";
 import { useStateValue } from "../../../../StateProvider";
 import { actionTypes } from "../../../../reducer";
 
-import { ReactComponent as SearchIcon } from "../../../../Assets/Images/SearchIcon.svg";
-import { ReactComponent as VoiceIcon } from "../../../../Assets/Images/VoiceIcon.svg";
+import Icon from "../../../../Components/Icon";
 
 import { Button, Dialog, IconButton } from "@material-ui/core";
 
@@ -41,11 +40,11 @@ function SearchBar({ hideButtons = false }) {
   return (
     <form className="search">
       <div className="search__input">
-        <VoiceIcon className="search__inputIcon" />
+        <Icon icon="searchIcon" size="24" />
         <input value={input} onChange={(e) => setInput(e.target.value)} />
         {/* <Divider orientation="vertical" className="verticalDivider" /> */}
         <IconButton onClick={handleClickOpen}>
-          <SearchIcon />
+          <Icon icon="voiceIcon" size="24" />
         </IconButton>
 
         <Dialog

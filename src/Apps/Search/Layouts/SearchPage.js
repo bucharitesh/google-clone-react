@@ -1,5 +1,4 @@
 import React, { lazy } from "react";
-// import "./SearchPage.css";
 import { useStateValue } from "../../../StateProvider";
 import { Switch, Route } from "react-router-dom";
 
