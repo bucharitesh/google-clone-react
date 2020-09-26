@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./SearchHeader.css";
 
-import SearchBar from "../SearchBar/SearchBar";
-import SearchPageOptions from "./SearchPageOptions/SearchPageOptions";
+import SearchBar from "../SearchBar";
+import SearchPageOptions from "./SearchPageOptions";
 
-import RightHeader from "../../../../Components/RightHeader/RightHeader";
+import RightHeader from "../../../../Components/RightHeader";
 
 function SearchHeader() {
   return (

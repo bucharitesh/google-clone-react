@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import RightHeader from "../../../../Components/RightHeader/RightHeader";
+import RightHeader from "../../../../Components/RightHeader";
 import "./MainHeader.css";
 
 function MainHeader() {

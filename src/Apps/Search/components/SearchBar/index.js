@@ -5,12 +5,12 @@ import "./SearchBar.css";
 import { useStateValue } from "../../../../StateProvider";
 import { actionTypes } from "../../../../reducer";
 
-import SearchIcon from "../../../../Assets/Images/SearchIcon";
-import VoiceIcon from "../../../../Assets/Images/VoiceIcon";
+import { ReactComponent as SearchIcon } from "../../../../Assets/Images/SearchIcon.svg";
+import { ReactComponent as VoiceIcon } from "../../../../Assets/Images/VoiceIcon.svg";
 
 import { Button, Dialog, IconButton } from "@material-ui/core";
 
-import VoiceTranscript from "./VoiceTranscript/VoiceTranscript";
+import VoiceTranscript from "./VoiceTranscript";
 
 function SearchBar({ hideButtons = false }) {
   const [{ term }, dispatch] = useStateValue();

@@ -1,6 +1,6 @@
 .AppDropdown__container {
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
   background: #fff;
   width: 300px;
   padding: 20px;
@@ -16,19 +16,20 @@
 
 .AppDropdown__apps {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
   height: 104px;
   width: 84px;
   margin-bottom: 5px;
+  justify-content: center;
+  align-items: center;
 }
 
 
-div.AppDropdown__apps:focus-within,  div.AppDropdown__apps:hover{
+div.AppDropdown__apps:focus-within,
+div.AppDropdown__apps:hover {
   /* box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
   border-color: rgba(223,225,229,0); */
-  background-color: RGB(232,240,253);
+  background-color: RGB(232, 240, 253);
   border-radius: 13px;
 }
 
@@ -39,5 +40,6 @@ div.AppDropdown__container a {
 
 .AppDropdown__appsName {
   padding: 10px;
-  font-size: 12px;
+  font-size: 10px;
+  justify-content: center;
 }

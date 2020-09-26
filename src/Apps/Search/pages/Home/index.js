@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.css";
 
-import SearchBar from "../../components/SearchBar/SearchBar";
+import SearchBar from "../../components/SearchBar";
 
 function Home() {
   return (

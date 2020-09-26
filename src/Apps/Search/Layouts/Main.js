@@ -1,5 +1,5 @@
 import React from "react";
-import MainHeader from "../components/MainHeader/MainHeader";
+import MainHeader from "../components/MainHeader";
 import { Switch, Route } from "react-router-dom";
 
 import Home from "../pages/Home";

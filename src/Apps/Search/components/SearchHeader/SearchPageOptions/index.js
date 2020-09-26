@@ -26,13 +26,6 @@ function SearchPageOptions() {
           </div>
         </NavLink>
 
-        <NavLink exact to="/maps">
-          <div className="searchPage__option">
-            <RoomOutlinedIcon fontSize="small" />
-            Maps
-          </div>
-        </NavLink>
-
         <NavLink to="/search/q/news">
           <div className="searchPage__option">
             <DescriptionOutlinedIcon fontSize="small" />

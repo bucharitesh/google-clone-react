@@ -1,8 +1,8 @@
 import React from "react";
 import "./SearchBar.css";
 
-import SearchInput from "./SearchInput/SearchInput";
-import SideDrawer from "../SideDrawer/SideDrawer";
+import SearchInput from "./SearchInput";
+import SideDrawer from "../SideDrawer";
 
 function Search({ panTo }) {
   return (

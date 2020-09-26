@@ -1,19 +1,20 @@
-import React from 'react';
-import Header from './components/Header/Header';
-import Sidebar from './components/Sidebar/Sidebar';
-import Body from './components/Body/Body';
-import './Drive.css';
+import React from "react";
+import "./Drive.css";
 
-function Drive() {
+import { Switch, Route } from "react-router-dom";
+
+import Main from "./Container/Main";
+
+function Drive({ match }) {
   return (
     <div>
-        <Header/>
-        <div className="Drive__body">
-          <Sidebar/>
-          <Body/>
-        </div>
+      <Switch>
+        <Route exact path={[`${match.url}`]}>
+          <Main />
+        </Route>
+      </Switch>
     </div>
-  )
+  );
 }
 
 export default Drive;

@@ -1,10 +1,11 @@
 import React from "react";
 import UserDropdown from "../../Components/RightHeader/Dropdown/UserDropdown/UserDropdown";
 
-import { Button, makeStyles } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import firebase from "firebase";
+import { auth } from "../../firebase/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
-import { useStateValue } from "../../StateProvider";
+import { Button, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   loginButton: {
@@ -13,42 +14,27 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function User() {
-  // eslint-disable-next-line
-  // const [state, dispatch] = useStateValue();
-
-  const [{ user }] = useStateValue();
-
+  const [user] = useAuthState(auth);
   const classes = useStyles();
-
+  const SignInWithGoogle = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider);
+  };
   return (
     <div>
-      {!user ? (
-        <>
-          <Link exact to="/u/login">
-            <Button
-              size="small"
-              variant="contained"
-              color="primary"
-              className={classes.loginButton}
-              disableElevation
-            >
-              login
-            </Button>
-          </Link>
-          <Link exact to="/u/register">
-            <Button
-              size="small"
-              variant="contained"
-              color="primary"
-              className={classes.loginButton}
-              disableElevation
-            >
-              Register
-            </Button>
-          </Link>
-        </>
-      ) : (
+      {user ? (
         <UserDropdown />
+      ) : (
+        <Button
+          size="small"
+          variant="contained"
+          color="primary"
+          className={classes.loginButton}
+          onClick={SignInWithGoogle}
+          disableElevation
+        >
+          login
+        </Button>
       )}
     </div>
   );

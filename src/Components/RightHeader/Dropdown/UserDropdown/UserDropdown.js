@@ -12,9 +12,9 @@ import {
   makeStyles,
   Popper,
 } from "@material-ui/core";
-import { useStateValue } from "../../../../StateProvider";
-import firebase from "firebase";
-import { actionTypes } from "../../../../reducer";
+
+import { auth } from "../../../../firebase/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const useStyles = makeStyles({
   root: {
@@ -45,7 +45,7 @@ const useStyles = makeStyles({
 });
 
 function UserDropdown(props) {
-  const [{ user }, dispatch] = useStateValue();
+  const [user] = useAuthState(auth);
 
   const [open, setOpen] = React.useState(false);
   const classes = useStyles();
@@ -60,23 +60,6 @@ function UserDropdown(props) {
     }
 
     setOpen(false);
-  };
-
-  const Signout = (event) => {
-    firebase
-      .auth()
-      .signOut()
-      .then(
-        function () {
-          dispatch({
-            type: actionTypes.SET_USER,
-            user: null,
-          });
-        },
-        function (error) {
-          console.error("Sign Out Error", error);
-        }
-      );
   };
 
   // return focus to the button when we transitioned from !open -> open
@@ -97,8 +80,7 @@ function UserDropdown(props) {
         aria-haspopup="true"
         onClick={handleToggle}
       >
-        {/* <Avatar src={user.photoURL} className={classes.avatar} /> */}
-        <Avatar className={classes.avatar} />
+        <Avatar src={user.photoURL} className={classes.avatar} />
       </IconButton>
       <Popper
         className={classes.root}
@@ -117,7 +99,6 @@ function UserDropdown(props) {
                 placement === "bottom" ? "right bottom" : "left bottom",
             }}
           >
-            {/* <Paper elevation={3} > */}
             <ClickAwayListener onClickAway={handleClose}>
               <div className="UserDropdown__container">
                 <div className="UserDropdown__header">
@@ -131,14 +112,16 @@ function UserDropdown(props) {
                   More email adding option coming soon
                 </p>
                 <Divider />
-                <Button
-                  className={classes.UserSignoutButton}
-                  size="small"
-                  variant="outlined"
-                  onClick={Signout}
-                >
-                  Sign Out
-                </Button>
+                {auth.currentUser && (
+                  <Button
+                    className={classes.UserSignoutButton}
+                    size="small"
+                    variant="outlined"
+                    onClick={() => auth.signOut()}
+                  >
+                    Sign Out
+                  </Button>
+                )}
                 <Divider className={classes.UserDivider} />
                 <div className="UserDropdown__policy">
                   <Link to="/privacypolicy">Privacy Policy</Link>
@@ -147,7 +130,6 @@ function UserDropdown(props) {
                 </div>
               </div>
             </ClickAwayListener>
-            {/* </Paper> */}
           </Grow>
         )}
       </Popper>

@@ -11,7 +11,7 @@ import { ReactComponent as MapsIcon } from "../../../../Assets/Images/GoogleMaps
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-import { Links } from "./Links";
+import { MapLinks, Apps } from "../../../../Links";
 import { Link } from "react-router-dom";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -86,7 +86,17 @@ function SideDrawer() {
         </div>
         <Divider />
         <List>
-          {Links.map(({ path, name }) => (
+          {MapLinks.map(({ path, name }) => (
+            <Link to={path} className="link__listItems">
+              <ListItem button key={name}>
+                <ListItemText primary={name} />
+              </ListItem>
+            </Link>
+          ))}
+        </List>
+        <Divider />
+        <List>
+          {Apps.map(({ path, name }) => (
             <Link to={path} className="link__listItems">
               <ListItem button key={name}>
                 <ListItemText primary={name} />

@@ -12,13 +12,11 @@
 // }
 
 export const initialState = {
-  term: null,
-  user: null,
+  term: "",
 };
 
 export const actionTypes = {
   SET_SEARCH_TERM: "SET_SEARCH_TERM",
-  SET_USER: "SET_USER",
 };
 
 const reducer = (state, action) => {
@@ -29,12 +27,6 @@ const reducer = (state, action) => {
       return {
         ...state,
         term: action.term,
-      };
-
-    case actionTypes.SET_USER:
-      return {
-        ...state,
-        user: action.user,
       };
 
     default:

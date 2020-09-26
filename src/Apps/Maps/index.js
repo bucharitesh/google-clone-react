@@ -2,12 +2,27 @@ import React, { useState, useCallback, useRef } from "react";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import "./Maps.css";
 
-import SearchBar from "./Components/SearchBar/SearchBar";
-import mapStyles from "./mapStyles";
+import SearchBar from "./Components/SearchBar";
+import mapStyles from "./Components/mapStyles";
+
+import {
+  BicyclingLayer,
+  TrafficLayer,
+  TransitLayer,
+  KmlLayer,
+} from "@react-google-maps/api";
+
+import { Switch, Route } from "react-router-dom";
 
 const API_KEY = process.env.REACT_APP_GCP_API_KEY;
 
-const libraries = ["places"];
+const libraries = [
+  "places",
+  "visualization",
+  "localContext",
+  "geometry",
+  "drawing",
+];
 const mapContainerStyle = {
   height: "100vh",
   width: "100vw",
@@ -22,10 +37,11 @@ const center = {
   lng: -79.3832,
 };
 
-function Maps() {
+function Maps({ match }) {
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: API_KEY,
     libraries,
+    preventGoogleFontsLoading: false,
   });
 
   const [markers, setMarkers] = useState([]);
@@ -34,8 +50,7 @@ function Maps() {
   const [selected, setSelected] = useState(null);
 
   const onMapClick = useCallback((e) => {
-    setMarkers((current) => [
-      ...current,
+    setMarkers(() => [
       {
         lat: e.latLng.lat(),
         lng: e.latLng.lng(),
@@ -62,8 +77,9 @@ function Maps() {
     mapRef.current = map;
   }, []);
 
-  if (loadError) return "Error";
-  if (!isLoaded) return "Loading...";
+  if (loadError)
+    return `Error Loading maps please check your internet connection`;
+  if (!isLoaded) return `Loading Maps please wait...`;
 
   return (
     <div>
@@ -79,6 +95,7 @@ function Maps() {
         options={options}
         onClick={onMapClick}
         onLoad={onMapLoad}
+        hover
       >
         {markers.map((marker) => (
           <Marker
@@ -89,6 +106,19 @@ function Maps() {
             }}
           />
         ))}
+
+        <Switch>
+          <Route exact path={`${match.url}/bicycle`}>
+            <BicyclingLayer />
+          </Route>
+          <Route exact path={`${match.url}/traffic`} component={TrafficLayer} />
+          <Route exact path={`${match.url}/transit`}>
+            <TransitLayer />
+          </Route>
+          <Route exact path={`${match.url}/kml`}>
+            <KmlLayer />
+          </Route>
+        </Switch>
       </GoogleMap>
     </div>
   );

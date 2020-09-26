@@ -9,12 +9,11 @@ import {
   makeStyles,
   Popper,
 } from "@material-ui/core";
+
 import AppsIcon from "@material-ui/icons/Apps";
 
-import { ReactComponent as EasyPharmIcon } from "../../../../Assets/Images/EasyPharmIcon.svg";
-import BuchariteshIcon from "../../../../Assets/Images/BuchariteshIcon";
-import { ReactComponent as TodoIcon } from "../../../../Assets/Images/TodoIcon.svg";
-import { ReactComponent as DriveIcon } from "../../../../Assets/Images/GoogleDriveIcon.svg";
+import { Apps } from "../../../../Links";
+import Icon from "../../../Icon";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,6 +27,7 @@ function AppDropdown(props) {
   const [open, setOpen] = React.useState(false);
   const classes = useStyles();
   const anchorRef = React.useRef(null);
+
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
   };
@@ -78,30 +78,14 @@ function AppDropdown(props) {
           >
             <ClickAwayListener onClickAway={handleClose}>
               <div className="AppDropdown__container">
-                <Link to="/drive">
-                  <div className="AppDropdown__apps">
-                    <DriveIcon height="36" width="36" />
-                    <p className="AppDropdown__appsName">Drive</p>
-                  </div>
-                </Link>
-                <a href="https://bucharitesh.in" target="__blank__" alt="">
-                  <div className="AppDropdown__apps">
-                    <BuchariteshIcon height="36" width="36" />
-                    <p className="AppDropdown__appsName">Bucharitesh</p>
-                  </div>
-                </a>
-                <a href="https://easypharm.web.app" target="__blank__" alt="">
-                  <div className="AppDropdown__apps">
-                    <EasyPharmIcon height="36" width="36" />
-                    <p className="AppDropdown__appsName">EasyPharm</p>
-                  </div>
-                </a>
-                <a href="https://todo.bucharitesh.in" alt="">
-                  <div className="AppDropdown__apps">
-                    <TodoIcon height="36" width="36" />
-                    <p className="AppDropdown__appsName">Todo</p>
-                  </div>
-                </a>
+                {Apps.map(({ path, icon, appName }) => (
+                  <Link to={path}>
+                    <div className="AppDropdown__apps">
+                      <Icon icon={icon} size="36" />
+                      <p className="AppDropdown__appsName">{appName}</p>
+                    </div>
+                  </Link>
+                ))}
               </div>
             </ClickAwayListener>
           </Grow>

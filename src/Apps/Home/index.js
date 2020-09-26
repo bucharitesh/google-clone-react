@@ -1,20 +1,16 @@
 import React from "react";
-import RightHeader from "../../Components/RightHeader/RightHeader";
+import RightHeader from "../../Components/RightHeader";
 import "./Home.css";
 import { Link } from "react-router-dom";
-import Welcome from "./Welcome";
+import Welcome from "./Components/Welcome";
 
-import { ReactComponent as EasyPharmIcon } from "../../Assets/Images/EasyPharmIcon.svg";
-import BuchariteshIcon from "../../Assets/Images/BuchariteshIcon";
-import { ReactComponent as TodoIcon } from "../../Assets/Images/TodoIcon.svg";
-import { ReactComponent as GoogleIcon } from "../../Assets/Images/GoogleIcon.svg";
-import { ReactComponent as GoogleDriveIcon } from "../../Assets/Images/GoogleDriveIcon.svg";
-import { ReactComponent as GoogleMapsIcon } from "../../Assets/Images/GoogleMapsIcon2.svg";
+import Icon from "../../Components/Icon";
+import { Apps } from "../../Links";
 
 function Home() {
   return (
     <div className="Home__container">
-      <ul class="circles">
+      <ul className="circles">
         <li></li>
         <li></li>
         <li></li>
@@ -32,42 +28,14 @@ function Home() {
       <div className="Home__body">
         <Welcome />
         <div className="Home__appContainer">
-          <Link to="/search">
-            <div className="Home__apps">
-              <GoogleIcon height="40" width="40" />
-              <p>Google Search</p>
-            </div>
-          </Link>
-          <Link to="/drive">
-            <div className="Home__apps">
-              <GoogleDriveIcon height="40" width="40" />
-              <p>Google Drive</p>
-            </div>
-          </Link>
-          <Link to="/maps">
-            <div className="Home__apps">
-              <GoogleMapsIcon height="40" width="40" />
-              <p>Google Maps</p>
-            </div>
-          </Link>
-          <a href="https://bucharitesh.in">
-            <div className="Home__apps">
-              <BuchariteshIcon height="40" width="40" />
-              <p>bucharitesh.in</p>
-            </div>
-          </a>
-          <a href="https://easypharm.web.app">
-            <div className="Home__apps">
-              <EasyPharmIcon height="40" width="40" />
-              <p>EasyPharm</p>
-            </div>
-          </a>
-          <a href="https://todo.bucharitesh.in">
-            <div className="Home__apps">
-              <TodoIcon height="40" width="40" />
-              <p>Todo App</p>
-            </div>
-          </a>
+          {Apps.map(({ path, icon, appName }) => (
+            <Link to={path}>
+              <div className="Home__apps">
+                <Icon icon={icon} size="40" />
+                <p>{appName}</p>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
       <div className="Home__footer">

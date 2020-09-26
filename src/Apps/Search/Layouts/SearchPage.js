@@ -3,12 +3,12 @@ import React, { lazy } from "react";
 import { useStateValue } from "../../../StateProvider";
 import { Switch, Route } from "react-router-dom";
 
-import All from "../pages/SearchPage/All/All";
-import Images from "../pages/SearchPage/Images/Images";
-import News from "../pages/SearchPage/News/News";
-import Videos from "../pages/SearchPage/Videos/Videos";
+import All from "../pages/SearchPage/All";
+import Images from "../pages/SearchPage/Images";
+import News from "../pages/SearchPage/News";
+import Videos from "../pages/SearchPage/Videos";
 
-import SearchHeader from "../components/SearchHeader/SearchHeader";
+import SearchHeader from "../components/SearchHeader";
 
 const Maps = lazy(() => import("../../Maps"));
 
