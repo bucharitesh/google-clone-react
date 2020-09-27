@@ -3,7 +3,6 @@ import "./SearchPageOptions.css";
 import { NavLink } from "react-router-dom";
 
 import SearchIcon from "@material-ui/icons/Search";
-import RoomOutlinedIcon from "@material-ui/icons/RoomOutlined";
 import DescriptionOutlinedIcon from "@material-ui/icons/DescriptionOutlined";
 import ImageOutlinedIcon from "@material-ui/icons/ImageOutlined";
 import PlayCircleFilledOutlinedIcon from "@material-ui/icons/PlayCircleFilledOutlined";

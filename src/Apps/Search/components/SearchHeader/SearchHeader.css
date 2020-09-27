@@ -1,57 +1,202 @@
 /* ------------------------------- */
 /*        Search Header            */
 /* ------------------------------- */
+/* @media only screen and (min-width: 768px) {
+  .search {
+    height: 55px;
+  }
 
-.search {
-  height: 55px;
+  .searchPage__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    align-items: flex-start;
+    padding: 20px 0px 0px 20px;
+    border-bottom: 1px solid lightgrey;
+    border-width: 100%
+  }
+
+  .searchPage__headerTop {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: self-end;
+    position: unset;
+    justify-content: space-between;
+  }
+
+
+  .searchPage__logo {
+    object-fit: contain;
+    height: 30px;
+    margin-right: 50px;
+    margin-top: 10px;
+  }
+
+  .searchPage__headerBody>.search>.search__input {
+    margin-top: 0;
+    /* width: unset; */
+/* margin: unset;
+    min-width: 100px;
+    height: 22px;
+  }
+
+  .seachPage____headerRight {
+    display: flex;
+    align-items: center;
+    min-width: 13vw;
+    justify-content: center;
+  }
+
+  .seachPage____headerLeft {
+    display: flex;
+  }
 }
 
-.searchPage__header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  background-color: white;
-  z-index: 100;
-  align-items: flex-start;
-  padding: 20px 0px 0px 20px;
-  border-bottom: 1px solid lightgrey;
-  border-width: 100%
+@media only screen and (max-width: 768px) {
+  .search {
+    height: 55px;
+  }
+
+  .searchPage__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    align-items: flex-start;
+    padding: 20px 0px 0px 20px;
+    border-bottom: 1px solid lightgrey;
+    border-width: 100%
+  }
+
+  .searchPage__logo {
+    flex: 2;
+    object-fit: contain;
+    height: 30px;
+    display: none;
+  }
+
+  .searchPage__headerBody>.search>.search__input {
+    flex: 1;
+    margin-top: 0;
+    /* width: unset; */
+/* margin: unset;
+    min-width: 100px;
+    height: 22px;
+
+  }
+}  */
+
+/* Laptops */
+@media only screen and (min-width: 768px) {
+  .searchPage__headerPhone {
+    display: none;
+  }
+
+  .searchPage__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    align-items: flex-start;
+    padding: 20px 0px 0px 20px;
+    border-bottom: 1px solid lightgrey;
+    border-width: 100%
+  }
+
+  .searchPage__headerTop {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: self-end;
+    position: unset;
+    justify-content: space-between;
+  }
+
+
+  .searchPage__logo {
+    object-fit: contain;
+    height: 30px;
+    margin-right: 50px;
+    margin-top: 10px;
+  }
+
+  .searchPage__headerBody>.search>.search__input {
+    margin-top: 0;
+    width: unset;
+    margin: unset;
+    min-width: 100px;
+    height: 22px;
+  }
+
+  .seachPage____headerRight {
+    display: flex;
+    align-items: center;
+    min-width: 13vw;
+    justify-content: center;
+  }
+
+  .seachPage____headerLeft {
+    display: flex;
+  }
 }
 
-.searchPage__headerTop {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  align-items: self-end;
-  position: unset;
-  justify-content: space-between;
-}
+/* Phone */
+@media only screen and (max-width: 768px) {
 
+  .searchPage__headerTop,
+  .searchPage__bottom {
+    display: none;
+  }
 
-.searchPage__logo {
-  object-fit: contain;
-  height: 30px;
-  margin-right: 50px;
-  margin-top: 10px;
-}
+  .search {
+    height: 75px;
+  }
 
-.searchPage__headerBody>.search>.search__input {
-  margin-top: 0;
-  /* width: unset; */
-  margin: unset;
-  min-width: 100px;
-  height: 22px;
-}
+  .searchPage__header {
+    display: flex;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    padding: 0px 0px 0px 0px;
+    border-bottom: 1px solid lightgrey;
+    border-width: 100%;
+  }
 
-.seachPage____headerRight {
-  display: flex;
-  align-items: center;
-  min-width: 13vw;
-  justify-content: center;
-}
+  .searchPage__headerPhone {
+    width: 100vw;
+    padding: 20px 0px 0px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.seachPage____headerLeft {
-  display: flex;
+  .searchPage__headerTopPhone {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .searchPage__logo {
+    object-fit: contain;
+    height: 30px;
+  }
+
+  .search>.search__input {
+    flex: 1;
+    margin-top: 20px;
+    height: 25px;
+  }
 }

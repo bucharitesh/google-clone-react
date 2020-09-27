@@ -35,22 +35,8 @@
   color: #5f6368;
 }
 
-/* @media (min-width: 476px) {
-  .SearchPage__options {
-    margin-left: 0%;
-  }
-}
-
-@media (min-width: 992px) {
-  .SearchPage__options {
-    margin-left: 200px;
-  }
-} */
-
-@media (max-width: 650px) {
-  .phone__options {
-    display: none;
-  }
+.SearchPage__options {
+  margin-left: 0%;
 }
 
 .searchPage__option a {

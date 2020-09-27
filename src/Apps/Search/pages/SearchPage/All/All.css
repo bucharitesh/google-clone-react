@@ -7,22 +7,19 @@
   font-size: 14px;
 }
 
-.searchPage__results {
-  width: 100%;
-}
-
 @media only screen and (max-width: 768px) {
   .searchPage__results {
     margin-top: 15px;
-    margin-left: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
     margin-bottom: 100px;
   }
 
   .searchPage__result {
-    margin: 20px 0;
+    margin: 10px 0;
     border: 1px solid #dfe1e5;
-    border-radius: 20px;
-    padding: 10px;
+    border-radius: 12px;
+    padding: 10px 20px;
     box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
   }
 
@@ -30,7 +27,7 @@
 
 @media only screen and (min-width: 768px) {
   .searchPage__results {
-    max-width: 50%;
+    /* max-width: 50%; */
     margin-top: 15px;
     margin-left: 150px;
     margin-bottom: 100px;

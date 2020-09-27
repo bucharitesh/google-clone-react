@@ -27,6 +27,24 @@ function SearchHeader() {
           <RightHeader />
         </div>
       </div>
+
+      <div className="searchPage__headerPhone">
+        <div className="searchPage__headerTopPhone">
+          <Link to="/search">
+            <img
+              className="searchPage__logo"
+              src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+              alt=""
+            />
+          </Link>
+          <RightHeader />
+        </div>
+        <SearchBar hideButtons />
+        <div className="pageOptions__phone">
+          <SearchPageOptions />
+        </div>
+      </div>
+
       <div className="searchPage__bottom">
         <div className="searchPage__options">
           <SearchPageOptions />
