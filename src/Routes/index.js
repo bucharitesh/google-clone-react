@@ -6,8 +6,9 @@ import { Switch, Route, useLocation } from "react-router-dom";
 
 const Home = lazy(() => import("../Apps/Home"));
 const Search = lazy(() => import("../Apps/Search"));
-const Drive = lazy(() => import("../Apps/Drive"));
+// const Drive = lazy(() => import("../Apps/Drive"));
 const Maps = lazy(() => import("../Apps/Maps"));
+const Store = lazy(() => import("../Apps/Store"));
 const NotFound = lazy(() => import("../Pages/404"));
 
 function Routes() {
@@ -28,7 +29,8 @@ function Routes() {
           <Route exact path="/" component={Home} />
           <Route path="/search" component={Search} />
           <Route path="/maps" component={Maps} />
-          <Route path="/drive" component={Drive} />
+          {/* <Route path="/drive" component={Drive} /> */}
+          <Route path="/store" component={Store} />
           <Route component={NotFound} />
         </Switch>
       </Suspense>

@@ -14,9 +14,18 @@ export const Apps = [
     icon: "googleMapsLogo",
     appName: "Google Maps",
   },
+  {
+    path: "/store",
+    icon: "playStoreLogo",
+    appName: "App Store",
+  },
 ];
 
 export const MapLinks = [
+  {
+    path: "/maps/direction",
+    name: "Direction",
+  },
   {
     path: "/maps/traffic",
     name: "Traffic Layer",

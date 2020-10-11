@@ -46,7 +46,7 @@ function SearchInput({ panTo }) {
     try {
       const results = await getGeocode({ address });
       const { lat, lng } = await getLatLng(results[0]);
-      panTo({ lat, lng });
+      panTo({ lat, lng, address });
     } catch (error) {
       console.log("😱 Error: ", error);
     }

@@ -3,24 +3,35 @@ import "./Direction.css";
 
 import SideDrawer from "../SideDrawer";
 
-// import { ReactComponent as BikeIcon } from "./Bike.svg";
-// import { ReactComponent as CarIcon } from "./Car.svg";
+import { actionTypes } from "../../../../reducer";
+import { useStateValue } from "../../../../StateProvider";
 
 import DirectionsWalkIcon from "@material-ui/icons/DirectionsWalk";
 import DirectionsBikeIcon from "@material-ui/icons/DirectionsBike";
 import DirectionsCarIcon from "@material-ui/icons/DirectionsCar";
 
 function DirectionSearch() {
-  const [mode, setMode] = useState("Driving");
-  const [origin, setOrigin] = useState("");
-  const [destination, setDestination] = useState("");
+  const [{}, dispatch] = useStateValue();
+  const [m, setM] = useState("");
+  const [o, setO] = useState("");
+  const [d, setD] = useState("");
 
   const handleOriginInput = (e) => {
-    setOrigin(e.target.origin);
+    setO(e.target.value);
   };
 
   const handleDestinationInput = (e) => {
-    setDestination(e.target.destination);
+    setD(e.target.value);
+  };
+
+  const DirectionSearch = (e) => {
+    e.preventDefault();
+    dispatch({
+      type: actionTypes.SET_DIRECTION,
+      destination: d,
+      origin: o,
+      mode: m,
+    });
   };
 
   return (
@@ -31,14 +42,14 @@ function DirectionSearch() {
           type="text"
           className="Direction__input"
           placeholder="Origin"
-          value={origin}
+          value={o}
           onChange={handleOriginInput}
         />
         <input
           type="text"
           className="Direction__input"
           placeholder="Destination"
-          value={destination}
+          value={d}
           onChange={handleDestinationInput}
         />
         <div className="Direction__radioGroup">
@@ -47,13 +58,12 @@ function DirectionSearch() {
             type="radio"
             name="tools"
             id="tool-1"
-            checked={mode === "Driving"}
+            checked={m === "DRIVING"}
             onChange={() => {
-              setMode("Driving");
+              setM("DRIVING");
             }}
           />
           <label className="htmlFor-checkbox-tools" htmlFor="tool-1">
-            {/* <CarIcon height="20px" width="20px" /> */}
             <DirectionsCarIcon />
             Driving
           </label>
@@ -62,9 +72,9 @@ function DirectionSearch() {
             type="radio"
             name="tools"
             id="tool-2"
-            checked={mode === "Cycling"}
+            checked={m === "BICYCLING"}
             onChange={() => {
-              setMode("Cycling");
+              setM("BICYCLING");
             }}
           />
           <label className="htmlFor-checkbox-tools" htmlFor="tool-2">
@@ -76,10 +86,9 @@ function DirectionSearch() {
             type="radio"
             name="tools"
             id="tool-3"
-            checked={mode === "Walking"}
-            // onChange={setMode("Walking")}
+            checked={m === "WALKING"}
             onChange={() => {
-              setMode("Walking");
+              setM("WALKING");
             }}
           />
           <label className="htmlhtmlFor-checkbox-tools" htmlFor="tool-3">
@@ -87,7 +96,15 @@ function DirectionSearch() {
             Walking
           </label>
         </div>
-        <button type="button">Search</button>
+        <div className="SearchButton__Container">
+          <button
+            className="Direction__SearchButton"
+            type="button"
+            onClick={DirectionSearch}
+          >
+            Search
+          </button>
+        </div>
       </div>
     </div>
   );

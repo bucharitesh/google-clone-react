@@ -5,7 +5,7 @@
   margin-bottom: 100px;
   --auto-grid-min-size: 12rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill);
+  grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 0.5fr));
   grid-gap: 0.5rem;
 }
 

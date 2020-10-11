@@ -3,6 +3,9 @@ import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import "./Maps.css";
 
 import SearchBar from "./Components/SearchBar";
+import GPS from "./Components/GPS/GPS";
+import Direction from "./Direction";
+import DirectionSearch from "./Components/DirectionSearch";
 import mapStyles from "./Components/mapStyles";
 
 import {
@@ -84,8 +87,17 @@ function Maps({ match }) {
   return (
     <div>
       <div className="SearchBar">
-        <SearchBar panTo={panTo} />
+        <Switch>
+          <Route path={`${match.url}/direction`}>
+            <DirectionSearch />
+          </Route>
+          <Route path={`${match.url}`}>
+            <SearchBar panTo={panTo} />
+          </Route>
+        </Switch>
       </div>
+
+      <GPS panTo={panTo} />
 
       <GoogleMap
         id="map"
@@ -117,6 +129,9 @@ function Maps({ match }) {
           </Route>
           <Route exact path={`${match.url}/kml`}>
             <KmlLayer />
+          </Route>
+          <Route exact path={`${match.url}/direction`}>
+            <Direction />
           </Route>
         </Switch>
       </GoogleMap>

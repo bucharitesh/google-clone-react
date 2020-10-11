@@ -96,10 +96,10 @@ function SideDrawer() {
         </List>
         <Divider />
         <List>
-          {Apps.map(({ path, name }) => (
+          {Apps.map(({ path, appName }) => (
             <Link to={path} className="link__listItems">
-              <ListItem button key={name}>
-                <ListItemText primary={name} />
+              <ListItem button key={appName}>
+                <ListItemText primary={appName} />
               </ListItem>
             </Link>
           ))}
